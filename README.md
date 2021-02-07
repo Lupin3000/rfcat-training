@@ -7,7 +7,7 @@ Ensure [RfCat](https://github.com/atlas0fd00m/rfcat) and all needed libraries ar
 
 ## SendSignal.py
 
-This Python script (_[SendSignal.py](./classes/SendSignal.py)_) is for sending a simple text message (_currently just as MOD_ASK_OOK_)
+This Python script (_[SendSignal.py](./classes/SendSignal.py)_) is for sending a simple text message (_currently just as MOD_ASK_OOK_). See usage for all information.
 
 ### Usage
 
