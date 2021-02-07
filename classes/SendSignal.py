@@ -263,7 +263,7 @@ class SendSignal(object):
 if __name__ == '__main__':
     RUN = SendSignal()
     RUN.print_info()
-    # RUN.run_send()
+    RUN.run_send()
     sys.exit(0)
 else:
     sys.exit(1)
