@@ -24,8 +24,8 @@ $ SendSignal.py 'HelloWorld' -f 868000000 -b 2000
 # send signal (with specific padding and repeats)
 $ SendSignal.py 'HelloWorld' -p 3 -r 5
 
-# send signal (with specific frequency, baut, padding and repeats)
-$ SendSignal.py 'HelloWorld' -f 434300000 -b 2000 -p 2 -r 3
+# send signal (with specific frequency, baut, padding, repeats and max power)
+$ SendSignal.py 'HelloWorld' -f 434300000 -b 2000 -p 2 -r 3 -m
 
 # send signal with verbose mode (Info)
 $ SendSignal.py 'HelloWorld' -v
