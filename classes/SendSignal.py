@@ -17,7 +17,6 @@ class SendSignal(object):
         """
         # initialize logging
         self.__logger = logging.getLogger(__name__)
-        self.__logger.debug('parse given arguments')
 
         # define argparse description/epilog
         description = 'Simple RfCat message signal by Python'
@@ -27,7 +26,7 @@ class SendSignal(object):
                  'The author of this code take no responsibility for your use or misuse.'
 
         # create argparse Object
-        parser = argparse.ArgumentParser(prog='send_string.py', description=description, epilog=epilog)
+        parser = argparse.ArgumentParser(prog='SendString.py', description=description, epilog=epilog)
 
         # set optional arguments
         parser.add_argument('-p', '--padding', help='Count of empty bytes', default=0, type=int)
