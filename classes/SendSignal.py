@@ -30,11 +30,12 @@ class SendSignal(object):
         parser = argparse.ArgumentParser(prog='send_string.py', description=description, epilog=epilog)
 
         # set optional arguments
-        parser.add_argument('-p', "--padding", help="Count of empty bytes", default=0, type=int)
-        parser.add_argument('-f', "--frequency", help="Frequency in Hz", default=434000000, type=int)
-        parser.add_argument('-b', "--baut", help="Baut rate in Hz", default=4800, type=int)
-        parser.add_argument('-r', "--repeats", help="Send signal n times", default=0, type=int)
-        parser.add_argument('-v', "--verbosity", help="increase output verbosity", action="count")
+        parser.add_argument('-p', '--padding', help='Count of empty bytes', default=0, type=int)
+        parser.add_argument('-f', '--frequency', help='Frequency in Hz', default=434000000, type=int)
+        parser.add_argument('-b', '--baut', help='Baut rate in Hz', default=4800, type=int)
+        parser.add_argument('-r', '--repeats', help='Send signal n times', default=0, type=int)
+        parser.add_argument('-m', '--max_power', help='Enable maximum power', default=False, action='store_true')
+        parser.add_argument('-v', '--verbosity', help='increase output verbosity', action="count")
 
         # set mandatory arguments
         parser.add_argument("message", help="Your message to send")
@@ -50,7 +51,14 @@ class SendSignal(object):
         else:
             logging.basicConfig(level=logging.ERROR)
 
-        self.__logger.debug('\nuser message: %s', args.message)
+        # logging user input on level DEBUG
+        self.__logger.debug('usr input message: %s', args.message)
+        self.__logger.debug('usr input padding: %s', args.padding)
+        self.__logger.debug('usr input baut: %s', args.baut)
+        self.__logger.debug('usr input frequency: %s', args.frequency)
+        self.__logger.debug('usr input repeats: %s ', args.repeats)
+        self.__logger.debug('usr input max_power: %s', args.max_power)
+        self.__logger.debug('usr input verbose: %s', args.verbosity)
 
         # assign all arguments to public vars
         self.text = args.message
@@ -58,6 +66,10 @@ class SendSignal(object):
         self.baut_rate = args.baut
         self.frequency = args.frequency
         self.repeats = args.repeats
+        if args.max_power:
+            self.max_power = True
+        else:
+            self.max_power = False
 
         # strip double quotes from message
         self.text = self.text.strip(chr(34))
@@ -83,6 +95,7 @@ class SendSignal(object):
         Verify for string and not empty
 
         :param value: The string to verify
+        :type value: str
         :return: True or False
         """
         # verify if string empty
@@ -94,10 +107,12 @@ class SendSignal(object):
     @staticmethod
     def verify_int_range(value, min_max_range):
         """
-        Verify for int
+        Verify for int in specific range
 
         :param value: The integer to verify
+        :type value: int
         :param min_max_range: The range as list (min:max)
+        :type min_max_range: list
         :return: True or False
         """
         # verify value in range
@@ -112,10 +127,11 @@ class SendSignal(object):
         Convert given value to HEX
 
         :param value: The string which get converted
+        :type value: str
         :return: The HEX value of converted value
         """
         # return converted string as HEX
-        return binascii.hexlify(str(value))
+        return binascii.hexlify(value)
 
     def __verify_arguments(self):
         """
@@ -125,31 +141,36 @@ class SendSignal(object):
 
         # verify message is string
         if not SendSignal.verify_string(self.text):
-            self.__logger.critical('message is an empty string: {0}'.format(type(self.text)))
+            self.__logger.critical('message is an empty string: {0} - {1}'.format(self.text,
+                                                                                  type(self.text)))
             sys.exit(1)
 
         # verify padding is in range
         min_max_val = [0, 100]
         if not SendSignal.verify_int_range(self.padding_count, min_max_val):
-            self.__logger.critical('padding is not in range: {0}'.format(type(self.padding_count)))
+            self.__logger.critical('padding is not in range: {0} - {1}'.format(self.padding_count,
+                                                                               type(self.padding_count)))
             sys.exit(1)
 
         # verify frequency is in range (unofficial range)
         min_max_val = [281000000, 962000000]
         if not SendSignal.verify_int_range(self.frequency, min_max_val):
-            self.__logger.critical('frequency is not in range {0}'.format(type(self.frequency)))
+            self.__logger.critical('frequency is not in range {0} - {1}'.format(self.frequency,
+                                                                                type(self.frequency)))
             sys.exit(1)
 
         # verify baut is in range (ASK OOK is only supported for data rate up until 250 kBaud.)
         min_max_val = [210, 250000]
         if not SendSignal.verify_int_range(self.baut_rate, min_max_val):
-            self.__logger.critical('baut is not in range: {0}'.format(type(self.baut_rate)))
+            self.__logger.critical('baut is not in range: {0} - {1}'.format(self.baut_rate,
+                                                                            type(self.baut_rate)))
             sys.exit(1)
 
         # verify repeats is in range
         min_max_val = [0, 100]
         if not SendSignal.verify_int_range(self.repeats, min_max_val):
-            self.__logger.critical('repeats is not in range: {0}'.format(type(self.repeats)))
+            self.__logger.critical('repeats is not in range: {0} - {1}'.format(self.repeats,
+                                                                               type(self.repeats)))
             sys.exit(1)
 
         # run private create_message method
@@ -219,6 +240,7 @@ class SendSignal(object):
         print('Frequency in Hz : {0}'.format(self.frequency))
         print('Baud rate in Hz : {0}'.format(self.baut_rate))
         print('Modulation      : {0}'.format(self._modulation))
+        print('Max Power       : {0}'.format(self.max_power))
         print('Packet length   : {0}'.format(self.__byte_count))
         print('Sending Repeats : {0}'.format(self.repeats))
         print('Padding bytes   : {0}'.format(self.padding_count))
@@ -242,12 +264,13 @@ class SendSignal(object):
         # execute RfCat
         try:
             rf = RfCat()
-            rf.setFreq(self.frequency)                # set frequency
-            rf.setMdmModulation(MOD_ASK_OOK)          # set modulation
-            rf.makePktFLEN(int(self.__byte_count))    # set packet length
-            rf.setMdmDRate(int(self.baut_rate))       # set baut rate
-            rf.setMdmSyncMode(0)                      # disable sync word and preamble
-            # rf.setMaxPower()
+            rf.setFreq(self.frequency)  # set frequency
+            rf.setMdmModulation(MOD_ASK_OOK)  # set modulation
+            rf.makePktFLEN(int(self.__byte_count))  # set packet length
+            rf.setMdmDRate(int(self.baut_rate))  # set baut rate
+            rf.setMdmSyncMode(0)  # disable sync word and preamble
+            if self.max_power:
+                rf.setMaxPower()  # enable max power
             self.__logger.info(rf.reprRadioConfig())
             rf.RFxmit(data=self.__send_message, repeat=int(self.repeats))
             rf.setModeIDLE()
@@ -263,7 +286,7 @@ class SendSignal(object):
 if __name__ == '__main__':
     RUN = SendSignal()
     RUN.print_info()
-    RUN.run_send()
+    # RUN.run_send()
     sys.exit(0)
 else:
     sys.exit(1)
