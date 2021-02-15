@@ -1,6 +1,6 @@
 # RfCat via command line
 
-The value of RfCat is that you can use it via Terminal (_command line_) or via Python scripts. So here now all important about the work with Terminal.
+The value of RfCat is that you can use it via Terminal (_command line_) or via Python scripts. So here now all important topics about the work with terminal.
 
 ```shell
 # run rfcat in terminal (start ipython terminal)
@@ -64,5 +64,7 @@ In [0]: d.setFreq(868000000)
 In [1]: d.setMdmModulation(MOD_2FSK)
 In [2]: print(d.reprRadioConfig())
 ```
+
+... will continue soon ...
 
 [Go back](./readme.md)
