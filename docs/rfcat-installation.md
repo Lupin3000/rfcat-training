@@ -1,6 +1,6 @@
 # RfCat Installation
 
-I describe the installation "only" for Debian Derivatives and macOS - I have not tried out yet on other systems. Important is that you need to decide which Python versions you wanna use and if you will enable all rfcat features plus take use of firmware updates.
+I describe the installation "only" for Debian derivatives (_which using apt_) and macOS - I have not tried out yet on other systems. Important is that you need to decide which Python versions you wanna use and if you will enable all rfcat features plus take use of firmware updates.
 
 ## Minimum Packages
 
