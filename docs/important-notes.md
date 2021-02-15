@@ -36,3 +36,5 @@ Mostly everything is limited:
 - MSK is only supported for data rates above 26 kBaud
 - GFSK, ASK and OOK is only supported for data rate up until 250 kBaud
 - MSK cannot be used if Manchester encoding/decoding is enabled
+
+[Go back](./readme.md)
