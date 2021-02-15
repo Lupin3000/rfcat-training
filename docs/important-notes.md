@@ -28,10 +28,21 @@ Following modulations are supported currently:
 - MOD_MSK (0x70)
 - MANCHESTER (0x08)
 
+...
+
 - MOD_2FSK | MANCHESTER (2FSK/Manchester encoding)
 - MOD_GFSK | MANCHESTER (GFSK/Manchester encoding)
 - MOD_ASK_OOK | MANCHESTER (ASK/OOK/Manchester encoding)
 - MOD_MSK | MANCHESTER (MSK/Manchester encoding)
+
+## AES modes
+
+- ENCCS_MODE_CBC: CBC - Cipher Block Chaining
+- ENCCS_MODE_CBCMAC: CBC-MAC - Cipher Block Chaining Message Authentication Code
+- ENCCS_MODE_CFB: CFB - Cipher Feedback
+- ENCCS_MODE_CTR: CTR - Counter
+- ENCCS_MODE_ECB: ECB - Electronic Codebook
+- ENCCS_MODE_OFB: OFB - Output Feedback
 
 ## Limitations of Modulation
 
