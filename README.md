@@ -5,6 +5,10 @@ RfCat classes for training
 
 Ensure [RfCat](https://github.com/atlas0fd00m/rfcat) and all needed libraries are installed! Insert the RfCat dongle before using this script. Please follow all local, state, federal, and international laws. The author of this code take no responsibility for your use or misuse.
 
+## Documentation
+
+Here I started my own [YardStick One/RfCat documentation](./docs/readme.md).
+
 ## SendSignal.py
 
 This Python script (_[SendSignal.py](./classes/SendSignal.py)_) is for sending a simple text message (_currently just as MOD_ASK_OOK_). See usage for all information.
