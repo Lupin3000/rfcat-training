@@ -33,7 +33,6 @@ Following modulations are supported currently:
 - MOD_2FSK | MANCHESTER (2FSK/Manchester encoding)
 - MOD_GFSK | MANCHESTER (GFSK/Manchester encoding)
 - MOD_ASK_OOK | MANCHESTER (ASK/OOK/Manchester encoding)
-- MOD_MSK | MANCHESTER (MSK/Manchester encoding)
 
 ## AES modes
 
