@@ -64,7 +64,7 @@ $ sudo rfcat --specan --centfreq 434000000
 $ sudo rfcat -i 0 --specan --centfreq 434000000
 ```
 
-![RfCat Spectrum Analyzer](./img/rfcat-spectrum_analyzer.png)
+![RfCat Spectrum Analyzer](../img/rfcat-spectrum_analyzer.png)
 
 ... will continue soon ...
 
