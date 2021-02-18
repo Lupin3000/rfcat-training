@@ -9,5 +9,6 @@ _Note:_ This documentation is more about [YardStick One](https://greatscottgadge
 - [Important notes](./important-notes.md)
 - [RfCat installation](./rfcat-installation.md)
 - [RfCat command line](./rfcat-commandline.md)
+- [RfCat ipython](./rfcat-ipython.md)
 
 ... will continue soon ...
