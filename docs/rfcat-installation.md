@@ -20,6 +20,9 @@ $ usermod -a -G sudo $USER
 ```shell
 # install commandline tools
 $ sudo xcode-select --install
+
+# install pip
+$ sudo easy_install pip
 ```
 
 ## Install RfCat (Mininal)
