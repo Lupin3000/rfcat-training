@@ -272,8 +272,8 @@ class SendSignal(object):
             # self.__logger.info(rf.reprRadioConfig())
             rf.RFxmit(data=self.__send_message, repeat=int(self.repeats))
             rf.setModeIDLE()
-        except Exception, e:
-            sys.exit('Error: {0}'.format(str(e)))
+        except Exception as err:
+            sys.exit('Error: {0}'.format(str(err)))
 
         # create datetime information
         now = datetime.now()
