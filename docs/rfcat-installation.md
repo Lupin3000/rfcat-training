@@ -114,7 +114,7 @@ $ sudo pip3 install PySide2
 $ sudo pip install PySide2
 ```
 
-## Verify spectrum scan installation
+## Verify packages for spectrum scan
 
 **Debian/macOS (Python3.x)**
 
@@ -183,6 +183,33 @@ $ sudo pip3 install libusb pyusb
 $ sudo pip install libusb pyusb
 ```
 
+### Verify USB installation
+
+```shell
+# verify installation (optional)
+$ ls -la /usr/local/lib/libusb*
+```
+
+**Debian/macOS (Python3.x)**
+
+```shell
+# show installed packages (optional)
+$ sudo pip3 freeze
+
+# filter output (optional)
+$ sudo pip3 freeze | grep -i "libusb\|pyusb"
+```
+
+**macOS (Python 2.x)**
+
+```shell
+# show installed packages (optional)
+$ sudo pip freeze
+
+# filter output (optional)
+$ sudo pip freeze | grep -i "libusb\|pyusb"
+```
+
 ### Install libraries for sdcc
 
 **Debian**
@@ -208,14 +235,11 @@ $ sudo dpkg -i sdcc-libraries_3.5.0+dfsg-2_all.deb
 $ sudo dpkg -i sdcc_3.5.0+dfsg-2+b1_amd64.deb
 ```
 
-## Verify bootloader/firmware installation
+## Verify sdcc installation
 
 ```shell
 # show version (optional)
 $ sdcc --version
-
-# verify installation (optional)
-$ ls -la /usr/local/lib/libusb*
 ```
 
 [Go back](./readme.md)
