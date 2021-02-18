@@ -45,6 +45,24 @@ $ sudo rfcat -r
 $ sudo rfcat -i [n] -r
 ```
 
+```python
+'RfCat, the greatest thing since Frequency Hopping!'
+
+Research Mode: enjoy the raw power of rflib
+
+currently your environment has an object called "d" for dongle.  this is how 
+you interact with the rfcat dongle:
+    >>> d.ping()
+    >>> d.setFreq(433000000)
+    >>> d.setMdmModulation(MOD_ASK_OOK)
+    >>> d.makePktFLEN(250)
+    >>> d.RFxmit("HALLO")
+    >>> d.RFrecv()
+    >>> print(d.reprRadioConfig())
+
+In [1]:
+```
+
 ## Start spectrum analyzer
 
 ```shell
