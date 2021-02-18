@@ -18,8 +18,8 @@ $ usermod -a -G sudo $USER
 **macOS**
 
 ```shell
-# ensure commandline tools are installed (macOS)
-$ xcode-select --install
+# install commandline
+$ sudo xcode-select --install
 ```
 
 ## Install RfCat (Mininal)
@@ -78,6 +78,26 @@ $ ls -la /usr/local/bin/rfcat*
 $ /usr/local/bin/rfcat --help
 ```
 
+**Debian/macOS (Python3.x)**
+
+```shell
+# show installed packages (optional)
+$ pip3 freeze
+
+# filter output (optional)
+$ pip3 freeze | grep -i "rfcat\|ipython\|pyreadline"
+```
+
+**macOS (Python2.x)**
+
+```shell
+# show installed packages (optional)
+$ pip freeze
+
+# filter output (optional)
+$ pip freeze | grep -i "rfcat\|ipython\|pyreadline"
+```
+
 ## Install RfCat: spectrum scan packages
 
 **Debian/macOS (Python3.x)**
@@ -92,6 +112,28 @@ $ sudo pip3 install PySide2
 ```shell
 # start installation
 $ sudo pip install PySide2
+```
+
+## Verify spectrum scan installation
+
+**Debian/macOS (Python3.x)**
+
+```shell
+# show installed packages (optional) 
+$ sudo pip3 freeze
+
+# filter output (optional) 
+$ sudo pip3 freeze | grep -i "pyside2"
+```
+
+**macOS (Python 2.x)**
+
+```shell
+# show installed packages (optional) 
+$ sudo pip freeze
+
+# filter output (optional) 
+$ sudo pip freeze | grep -i "pyside2"
 ```
 
 ## Install RfCat: bootloader/firmware update packages
