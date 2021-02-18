@@ -1,25 +1,17 @@
-# RfCat via command line
-
-The value of RfCat is that you can use it via Terminal (_command line_) or via Python scripts. So here now all important topics about the work with terminal.
+# RfCat (command line)
 
 ```shell
-# run rfcat in terminal (start ipython terminal)
-$ rfcat -r
-```
+# show rfcat help (optional)
+$ sudo rfcat -h
 
-## Getting help
-
-Take use of RfCat (_binary_) help!
-
-```shell
-# show rfcat help
-$ rfcat -h
-
-# show rfcat_bootloader help
+# show rfcat_bootloader help (optional)
 $ rfcat_bootloader --help
+
+# run rfcat in terminal (start ipython terminal)
+$ sudo rfcat -r
 ```
 
-Take use of internal IPython RfCat help!
+**Show RfCat-IPython help**
 
 ```python
 # show help
@@ -31,15 +23,13 @@ In [2]: print(d.reprRadioConfig())
 
 ## USB Timeouts
 
-To prevent the unplug/plug-in of YardStick One (_after your actions like receive or transmit_) you should run always following:
+_Note:_ To prevent the unplug/plug-in of YardStick One (_after your actions like receive or transmit_).
 
 ```python
 In [n]: d.setModeIDLE()
 ```
 
 ## Work with multiple dongels
-
-If you work on same device with more then one YardStick One (_Dongle_):
 
 ```shell
 $ sudo rfcat -i 0 -r
