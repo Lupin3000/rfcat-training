@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import logging
 import argparse
@@ -270,7 +269,7 @@ class SendSignal(object):
             rf.setMdmSyncMode(0)  # disable sync word and preamble
             if self.max_power:
                 rf.setMaxPower()  # enable max power
-            self.__logger.info(rf.reprRadioConfig())
+            # self.__logger.info(rf.reprRadioConfig())
             rf.RFxmit(data=self.__send_message, repeat=int(self.repeats))
             rf.setModeIDLE()
         except Exception, e:
