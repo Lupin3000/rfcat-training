@@ -26,17 +26,11 @@ optional arguments:
 # show rfcat_bootloader help (optional)
 $ rfcat_bootloader --help
 CC Bootloader Download Utility
-
 Usage:  /usr/local/bin/rfcat_bootloader serial_port command
-
 Commands:
-
   download <hex_file>
-
     Download hex_file to the device.
-    
   run
-
     Run the user code.
 ...
 ```
