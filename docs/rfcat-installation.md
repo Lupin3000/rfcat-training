@@ -18,7 +18,7 @@ $ usermod -a -G sudo $USER
 **macOS**
 
 ```shell
-# install commandline
+# install commandline tools
 $ sudo xcode-select --install
 ```
 
