@@ -39,6 +39,9 @@ $ sudo udevadm control --reload-rules
 
 # show some information (optional) 
 $ ls -la && cat requirements.txt
+
+# show local python information (optional)
+$ ls -la /usr/bin/ | grep -i "python"
 ```
 
 **Debian/macOS (Python3.x)**
