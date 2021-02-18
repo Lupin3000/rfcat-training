@@ -1,16 +1,14 @@
 # Important notes
 
-First things first ...
-
 ## Frequencies
 
-Following official operating frequencies are supported by YardStick One:
+Official operating frequencies (_YardStick One_):
 
 - 300-348 MHz
 - 391-464 MHz
 - 782-928 MHz
 
-Following unofficial operating frequencies are supported by YardStick One:
+Unofficial operating frequencies (_YardStick One_):
 
 - 281-361 MHz
 - 378-481 MHz
@@ -20,7 +18,7 @@ _Note:_ Official operating frequencies are guaranteed to work. Unofficial operat
 
 ## Modulation
 
-Following modulations are supported currently:
+Supported (_YardStick One_):
 
 - MOD_2FSK (0x00)
 - MOD_GFSK (0x10)
@@ -28,7 +26,7 @@ Following modulations are supported currently:
 - MOD_MSK (0x70)
 - MANCHESTER (0x08)
 
-...
+_Note:_ MSK cannot be used if Manchester encoding/decoding is enabled
 
 - MOD_2FSK | MANCHESTER (2FSK/Manchester encoding)
 - MOD_GFSK | MANCHESTER (GFSK/Manchester encoding)
@@ -45,11 +43,8 @@ Following modulations are supported currently:
 
 ## Limitations of Modulation
 
-Mostly everything is limited:
-
 - data rates up to 500 kbps
-- MSK is only supported for data rates above 26 kBaud
+- MSK is only supported for data rates above 26 kBaud 
 - GFSK, ASK and OOK is only supported for data rate up until 250 kBaud
-- MSK cannot be used if Manchester encoding/decoding is enabled
 
 [Go back](./readme.md)
