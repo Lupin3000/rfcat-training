@@ -21,7 +21,7 @@ $ usermod -a -G sudo $USER
 # install commandline tools
 $ sudo xcode-select --install
 
-# install pip
+# install pip (Python2.7)
 $ sudo easy_install pip
 ```
 
