@@ -44,11 +44,11 @@ In [6]: d.RFlisten()
 
 ## Work with multiple dongels
 
+**ttys000**
+
 ```shell
 $ sudo rfcat -i 0 -r
 ```
-
-1st interactive IPython terminal:
 
 ```python
 In [1]: d.setFreq(434000000)
@@ -56,11 +56,11 @@ In [2]: d.setMdmModulation(MOD_ASK_OOK)
 In [3]: print(d.reprRadioConfig())
 ```
 
+**ttys001**
+
 ```shell
 $ sudo rfcat -i 1 -r
 ```
-
-2nd interactive IPython terminal:
 
 ```python
 In [1]: d.setFreq(868000000)
