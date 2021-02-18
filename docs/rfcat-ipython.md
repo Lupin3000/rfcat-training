@@ -122,6 +122,12 @@ In [4]: d.RFxmit("\xA2\x03\xB4\x42\x10\xA4\xE5\x38\x00\x00\x00\x00\x00\x00" * 10
 In [5]: d.setModeIDLE()
 ```
 
+## Exit ipython terminal
+
+```python
+# exit ipython terminal
+In [n]: exit
+```
 
 ... will continue soon ...
 
