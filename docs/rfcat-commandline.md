@@ -41,7 +41,7 @@ Commands:
 ...
 ```
 
-## start ipython terminal
+## Start ipython terminal
 
 ```shell
 # run rfcat in terminal (start ipython terminal)
