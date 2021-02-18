@@ -1,18 +1,61 @@
 # RfCat (ipython)
 
-**Show RfCat-IPython help**
+## Start rfcat-ipython terminal (Single Dongle)
+
+```shell
+# start rfcat-ipython
+$ sudo rfcat -r
+```
+
+Interactive Python with the "d" instance to talk to
+
+## Start rfcat-ipython (Multiple dongels)
+
+**ttys000**
+
+```shell
+# start rfcat-ipython
+$ sudo rfcat -i 0 -r
+```
 
 ```python
-# show help
-In [1]: help(d.setMdmModulation)
+# set frequency
+In [1]: d.setFreq(434000000)
 
-# show current configuration (optional)
-In [2]: print(d.reprRadioConfig())
+# set modulation
+In [2]: d.setMdmModulation(MOD_ASK_OOK)
+
+# print current configuration
+In [3]: print(d.reprRadioConfig())
+```
+
+**ttys001**
+
+```shell
+$ sudo rfcat -i 1 -r
+```
+
+```python
+# set frequency
+In [1]: d.setFreq(868000000)
+
+# set modulation
+In [2]: d.setMdmModulation(MOD_2FSK)
+
+# print current configuration
+In [3]: print(d.reprRadioConfig())
+```
+
+## rfcat-ipython help
+
+```python
+# print help
+In [1]: help(d.setMdmModulation)
 ```
 
 ## USB Timeouts
 
-_Note:_ To prevent the unplug/plug-in of YardStick One (_after your actions like receive or transmit_).
+_Note:_ To prevent the unplug/plug-in (_after your actions like receive or transmit_).
 
 ```python
 # set idle mode
@@ -31,42 +74,54 @@ In [2]: d.specan(434000000)
 
 ![RfCat Spectrum Analyzer](../img/rfcat-spectrum_analyzer.png)
 
-## Listen
+## Receive signal (print to terminal)
 
 ```python
+# set frequency
 In [1]: d.setFreq(434000000)
+
+# set modulation
 In [2]: d.setMdmModulation(MOD_ASK_OOK)
+
+# set baud rate
 In [3]: d.setMdmDRate(4800)
+
+# drops most blocks to pkts (CARRIER)
 In [4]: d.lowball()
+
+# enable max power
 In [5]: d.setMaxPower()
+
+# start listen and dump data to screen
 In [6]: d.RFlisten()
+
+...
+
+# set idle mode
+In [7]: d.setModeIDLE()
 ```
 
-## Work with multiple dongels
-
-**ttys000**
-
-```shell
-$ sudo rfcat -i 0 -r
-```
+## Send signal
 
 ```python
+# set frequency
 In [1]: d.setFreq(434000000)
+
+# set modulation
 In [2]: d.setMdmModulation(MOD_ASK_OOK)
-In [3]: print(d.reprRadioConfig())
+
+# set baud rate
+In [3]: d.setMdmDRate(4800)
+
+# send signal
+In [4]: d.RFxmit("\xA2\x03\xB4\x42\x10\xA4\xE5\x38\x00\x00\x00\x00\x00\x00" * 10)
+
+...
+
+# set idle mode
+In [5]: d.setModeIDLE()
 ```
 
-**ttys001**
-
-```shell
-$ sudo rfcat -i 1 -r
-```
-
-```python
-In [1]: d.setFreq(868000000)
-In [2]: d.setMdmModulation(MOD_2FSK)
-In [3]: print(d.reprRadioConfig())
-```
 
 ... will continue soon ...
 
