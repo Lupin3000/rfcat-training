@@ -4,9 +4,9 @@
 
 ```python
 # show help
-In [0]: help(d.setMdmModulation)
+In [1]: help(d.setMdmModulation)
 
-# show current settings (optional)
+# show current configuration (optional)
 In [2]: print(d.reprRadioConfig())
 ```
 
@@ -21,15 +21,26 @@ In [n]: d.setModeIDLE()
 
 ## Spectrum Analyzer
 
-```shell
+```python
 # start spectrum analyzer without frequency
 In [1]: d.specan()
 
 # set frequency
-In [2]: d.specan(413000000)
+In [2]: d.specan(434000000)
 ```
 
 ![RfCat Spectrum Analyzer](../img/rfcat-spectrum_analyzer.png)
+
+## Listen
+
+```python
+In [1]: d.setFreq(434000000)
+In [2]: d.setMdmModulation(MOD_ASK_OOK)
+In [3]: d.setMdmDRate(4800)
+In [4]: d.lowball()
+In [5]: d.setMaxPower()
+In [6]: d.RFlisten()
+```
 
 ## Work with multiple dongels
 
@@ -40,9 +51,9 @@ $ sudo rfcat -i 0 -r
 1st interactive IPython terminal:
 
 ```python
-In [0]: d.setFreq(434000000)
-In [1]: d.setMdmModulation(MOD_ASK_OOK)
-In [2]: print(d.reprRadioConfig())
+In [1]: d.setFreq(434000000)
+In [2]: d.setMdmModulation(MOD_ASK_OOK)
+In [3]: print(d.reprRadioConfig())
 ```
 
 ```shell
@@ -52,9 +63,9 @@ $ sudo rfcat -i 1 -r
 2nd interactive IPython terminal:
 
 ```python
-In [0]: d.setFreq(868000000)
-In [1]: d.setMdmModulation(MOD_2FSK)
-In [2]: print(d.reprRadioConfig())
+In [1]: d.setFreq(868000000)
+In [2]: d.setMdmModulation(MOD_2FSK)
+In [3]: print(d.reprRadioConfig())
 ```
 
 ... will continue soon ...
