@@ -9,7 +9,7 @@
 $ apt update -y && apt upgrade -y
 
 # install some base packages
-$ apt install -y git vim curl python3-pip
+$ apt install -y git tar curl python3-pip
 
 # add user to sudo group
 $ usermod -a -G sudo $USER
