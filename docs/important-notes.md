@@ -16,9 +16,7 @@ Unofficial operating frequencies (_YardStick One_):
 
 _Note:_ Official operating frequencies are guaranteed to work. Unofficial operating frequencies work in our experience.
 
-## Modulation
-
-Supported (_YardStick One_):
+## Modulation (rfcat)
 
 - MOD_2FSK (0x00)
 - MOD_GFSK (0x10)
@@ -32,7 +30,7 @@ _Note:_ MSK cannot be used if Manchester encoding/decoding is enabled
 - MOD_GFSK | MANCHESTER (GFSK/Manchester encoding)
 - MOD_ASK_OOK | MANCHESTER (ASK/OOK/Manchester encoding)
 
-## AES modes
+## AES modes (rfcat)
 
 - ENCCS_MODE_CBC: CBC - Cipher Block Chaining
 - ENCCS_MODE_CBCMAC: CBC-MAC - Cipher Block Chaining Message Authentication Code
@@ -41,7 +39,7 @@ _Note:_ MSK cannot be used if Manchester encoding/decoding is enabled
 - ENCCS_MODE_ECB: ECB - Electronic Codebook
 - ENCCS_MODE_OFB: OFB - Output Feedback
 
-## Limitations of Modulation
+## Limitations of Modulation (rfcat)
 
 - data rates up to 500 kbps
 - MSK is only supported for data rates above 26 kBaud 
