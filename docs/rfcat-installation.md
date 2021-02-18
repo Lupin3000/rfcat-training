@@ -22,7 +22,7 @@ $ usermod -a -G sudo $USER
 $ xcode-select --install
 ```
 
-## Mininal install RfCat
+## Install RfCat (Mininal)
 
 ```shell
 # clone repository
@@ -47,7 +47,7 @@ $ ls -la && cat requirements.txt
 # install needed packages
 $ sudo pip3 install pyreadline ipython
 
-# start rfcat installation
+# start rfcat installation (repo folder)
 $ sudo python3.7 setup.py install
 ```
 
@@ -57,7 +57,7 @@ $ sudo python3.7 setup.py install
 # install needed packages 
 $ sudo pip install pyreadline ipython
 
-# start rfcat installation
+# start rfcat installation (repo folder)
 $ sudo python setup.py install
 ```
 
