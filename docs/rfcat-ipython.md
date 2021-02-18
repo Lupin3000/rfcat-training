@@ -15,8 +15,21 @@ In [2]: print(d.reprRadioConfig())
 _Note:_ To prevent the unplug/plug-in of YardStick One (_after your actions like receive or transmit_).
 
 ```python
+# set idle mode
 In [n]: d.setModeIDLE()
 ```
+
+## Spectrum Analyzer
+
+```shell
+# start spectrum analyzer without frequency
+In [1]: d.specan()
+
+# set frequency
+In [2]: d.specan(413000000)
+```
+
+![RfCat Spectrum Analyzer](../img/rfcat-spectrum_analyzer.png)
 
 ## Work with multiple dongels
 
