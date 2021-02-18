@@ -1,25 +1,111 @@
 # RfCat Installation
 
-I describe the installation "only" for Debian derivatives (_which using apt_) and macOS - I have not tried out yet on other systems. Important is that you need to decide which Python versions you wanna use and if you will enable all rfcat features plus take use of firmware updates.
+## Preparation
 
-## Minimum Packages
+**Debian**
 
-Start the installation with some "base" packages.
+```shell
+# update/upgrade system
+$ apt update -y && apt upgrade -y
 
-_Note:_ The packages `python-usb`, `libusb-1.0.0`, `make` and `sdcc` are mostly needed for firmware updates. But even if you don't want to use them yet, I would recommend to install some of them already now.
+# install some base packages
+$ apt install -y git vim curl python3-pip
+
+# add user to sudo group
+$ usermod -a -G sudo $USER
+```
+
+**macOS**
 
 ```shell
 # ensure commandline tools are installed (macOS)
 $ xcode-select --install
-
-# update/upgrade your system via apt
-$ apt update -y && apt upgrade -y
-
-# install needed packages via apt
-$ apt install git libusb-1.0.0
 ```
 
-For macOS you can download, compile and install libusb by your self!
+## Mininal install RfCat
+
+```shell
+# clone repository
+$ git clone https://github.com/atlas0fd00m/rfcat.git
+
+# change into directory (of cloned repository)
+$ cd rfcat
+
+# copy rules from cloned repository directory (not on macOS)
+$ sudo cp etc/udev/rules.d/20-rfcat.rules /etc/udev/rules.d
+
+# reload the udev rules (not on macOS)
+$ sudo udevadm control --reload-rules
+
+# show some information (optional) 
+$ ls -la && cat requirements.txt
+```
+
+**Debian/macOS (Python3.x)**
+
+```shell
+# install needed packages
+$ sudo pip3 install pyreadline ipython
+
+# start rfcat installation
+$ sudo python3.7 setup.py install
+```
+
+**macOS (Python 2.x)**
+
+```shell
+# install needed packages 
+$ sudo pip install pyreadline ipython
+
+# start rfcat installation
+$ sudo python setup.py install
+```
+
+## Verify minimal installation
+
+RfCat binaries will be installed on path `/usr/local/bin/`:
+
+- rfcat
+- rfcat_bootloader
+- rfcat_msfrelay
+- rfcat_server
+
+```shell
+# verify installed binaries (optional)
+$ ls -la /usr/local/bin/rfcat*
+
+# show help (optional)
+$ /usr/local/bin/rfcat --help
+```
+
+## Install RfCat: spectrum scan packages
+
+**Debian/macOS (Python3.x)**
+
+```shell
+# start installation
+$ sudo pip3 install PySide2
+```
+
+**macOS (Python 2.x)**
+
+```shell
+# start installation
+$ sudo pip install PySide2
+```
+
+## Install RfCat: bootloader/firmware update packages
+
+### Install libraries for USB
+
+**Debian**
+
+```shell
+# install needed packages via apt
+$ apt install -y make libusb-1.0.0 python3-usb
+```
+
+**macOS**
 
 ```shell
 # download via curl
@@ -39,86 +125,29 @@ $ make
 
 # run installation
 $ sudo make install
-
-# verify installation (optional)
-$ ls -la /usr/local/lib/libusb*
 ```
 
-**Python2.x**
+**Debian/macOS (Python3.x)**
 
 ```shell
-# install needed packages via apt
-$ apt install -y python-pip python-usb
-
-# install needed packages vi pip
-$ pip install pyreadline libusb pyusb ipython
-
-# for usage of specan (only macOS)
-$ pip install PySide2
+# install python usb packages
+$ sudo pip3 install libusb pyusb
 ```
 
-**Python3.x**
+**macOS (Python 2.x)**
 
 ```shell
-# install needed packages via apt
-$ apt install -y python3-pip python3-usb
-
-# install needed packages vi pip
-$ pip3 install pyreadline libusb pyusb ipython
-
-# for usage of specan
-$ pip3 install PySide2
+# install python usb packages
+$ sudo pip install libusb pyusb
 ```
 
-**RfCat**
+### Install libraries for sdcc
 
-The RfCat binaries will be installed on path `/usr/local/bin/`. After successful installation you will find following:
-
-- rfcat
-- rfcat_bootloader
-- rfcat_msfrelay
-- rfcat_server
+**Debian**
 
 ```shell
-# clone repository
-$ git clone https://github.com/atlas0fd00m/rfcat.git
-
-# change into directory (of cloned repository)
-$ cd rfcat
-
-# start compilation and installation
-$ python setup.py install
-
-# verify installed binaries (optional)
-$ ls -la /usr/local/bin/rfcat*
-```
-
-**Prepare user and rules**
-
-Normally you don't do all the actions as root user - so you need to provide minimum one user the proper rights and add this user to sudo group.
-
-```shell
-# add user to sudo group
-$ usermod -a -G sudo $USER
-```
-
-You will also need permanent symlinks to the USB serial devices that will communicate with the YardStick One bootloader when required.
-
-```shell
-# copy rules from cloned repository directory
-$ sudo cp etc/udev/rules.d/20-rfcat.rules /etc/udev/rules.d
-
-# reload the udev rules
-$ sudo udevadm control --reload-rules
-```
-
-## Packages for firmware updates
-
-The packages `make` and `sdcc` are needed if you will do updates or compile and install new firmware on the dongle. Important here is newer/higher version of sdcc (_max. 3.5.0_) will not work!
-
-```shell
-# install via apt
-$ apt install make sdcc=3.5.0
+# start installation
+$ sudo apt install -y sdcc=3.5.0
 ```
 
 If your package manager complain about the version you can take use of [Debian Stretch Repository](https://packages.debian.org/stretch/sdcc).
@@ -135,9 +164,16 @@ $ sudo dpkg -i sdcc-libraries_3.5.0+dfsg-2_all.deb
 
 # install sdcc package
 $ sudo dpkg -i sdcc_3.5.0+dfsg-2+b1_amd64.deb
+```
 
+## Verify bootloader/firmware installation
+
+```shell
 # show version (optional)
 $ sdcc --version
+
+# verify installation (optional)
+$ ls -la /usr/local/lib/libusb*
 ```
 
 [Go back](./readme.md)
