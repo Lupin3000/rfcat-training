@@ -1,5 +1,7 @@
 # RfCat (command line)
 
+## show rfcat help
+
 ```shell
 # show rfcat help (optional)
 $ sudo rfcat -h
@@ -20,6 +22,7 @@ optional arguments:
   --force               use this to make sure you want to set bootloader mode
                         (you *must* flash after setting --bootloader)
 
+
 # show rfcat_bootloader help (optional)
 $ rfcat_bootloader --help
 CC Bootloader Download Utility
@@ -36,12 +39,29 @@ Commands:
 
     Run the user code.
 ...
+```
 
+## start ipython terminal
+
+```shell
 # run rfcat in terminal (start ipython terminal)
 $ sudo rfcat -r
 
 # select dongle
 $ sudo rfcat -i [n] -r
+```
+
+## Start spectrum analyzer
+
+```shell
+# start spectrum analyzer without frequency
+$ sudo rfcat --specan
+
+# set frequency
+$ sudo rfcat --specan --centfreq 434000000
+
+# select dongle
+$ sudo rfcat -i 0 --specan --centfreq 434000000
 ```
 
 ... will continue soon ...
