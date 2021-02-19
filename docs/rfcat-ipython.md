@@ -49,8 +49,11 @@ In [3]: print(d.reprRadioConfig())
 ## rfcat-ipython help
 
 ```python
-# print help
-In [1]: help(d.setMdmModulation)
+# print help for discover
+In [1]: help(d.discover)
+
+# print help for debug
+In [2]: help(d.debug)
 ```
 
 ## USB Timeouts
@@ -58,7 +61,7 @@ In [1]: help(d.setMdmModulation)
 _Note:_ To prevent the unplug/plug-in (_after your actions like receive or transmit_).
 
 ```python
-# set idle mode
+# set radio to IDLE state
 In [n]: d.setModeIDLE()
 ```
 
@@ -73,6 +76,13 @@ In [2]: d.specan(434000000)
 ```
 
 ![RfCat Spectrum Analyzer](../img/rfcat-spectrum_analyzer.png)
+
+## Ping
+
+```python
+# send 5 pings with string
+In [1]: d.ping(count=5, buf=b'HELP ME - HELP ME')
+```
 
 ## Receive signal (print to terminal)
 
@@ -114,7 +124,7 @@ In [2]: d.setMdmModulation(MOD_ASK_OOK)
 In [3]: d.setMdmDRate(4800)
 
 # send signal
-In [4]: d.RFxmit("\xA2\x03\xB4\x42\x10\xA4\xE5\x38\x00\x00\x00\x00\x00\x00" * 10)
+In [4]: d.RFxmit("\xA2\x03\xB4\x42\x10\xA4\xE5\x38" * 5)
 
 ...
 
