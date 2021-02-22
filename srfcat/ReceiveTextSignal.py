@@ -41,7 +41,7 @@ class ReceiveSignal:
         """
 
         divider = '-' * 80
-        print("SIGNAL INFORMATION")
+        print("SIGNAL RECEIVE INFORMATION")
         print(divider)
         print('Frequency in Hz : {0}'.format(ReceiveSignal.__FREQUENCY))
         print('Baud rate in Hz : {0}'.format(ReceiveSignal.__BAUD_RATE))

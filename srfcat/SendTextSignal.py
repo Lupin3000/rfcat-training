@@ -9,7 +9,7 @@ class SendSignal:
     __BAUD_RATE = 4800
     __TEXT_MESSAGE = str()
     __MODULATION = MOD_ASK_OOK
-    __REPEATS = 10
+    __REPEATS = 0
 
     def __init__(self):
         pass
@@ -37,6 +37,17 @@ class SendSignal:
         SendSignal.__BAUD_RATE = int(value)
 
     @staticmethod
+    def set_repeats(value):
+        """
+        set transmit repeats
+
+        :type value: int
+        :param value: integer for repeats
+        """
+
+        SendSignal.__REPEATS = int(value)
+
+    @staticmethod
     def set_message(value):
         """
         set message to transmit
@@ -54,7 +65,7 @@ class SendSignal:
         """
 
         divider = '-' * 80
-        print("SIGNAL INFORMATION")
+        print("SIGNAL TRANSMIT INFORMATION")
         print(divider)
         print('Frequency in Hz : {0}'.format(SendSignal.__FREQUENCY))
         print('Baud rate in Hz : {0}'.format(SendSignal.__BAUD_RATE))
