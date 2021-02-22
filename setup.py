@@ -7,8 +7,8 @@ def readme():
 
 
 setup(name='srfc',
-      version='0.0.2',
-      description='simple wrapper for rfcat',
+      version='0.0.5',
+      description='very simple wrapper for rfcat',
       long_description=readme(),
       url='https://softwaretester.info',
       author='Steffen Lorenz',
