@@ -11,7 +11,7 @@ Here I started my own [YardStick One/RfCat documentation](./docs/readme.md).
 
 ## SendSignal.py
 
-This Python script (_[SendSignal.py](./classes/SendSignal.py)_) is for sending a simple text message (_currently just as MOD_ASK_OOK_). See usage for all information.
+This Python script (_[SendSignal.py](../../Library/Application%20Support/JetBrains/PyCharmCE2020.3/scratches/SendSignal.py)_) is for sending a simple text message (_currently just as MOD_ASK_OOK_). See usage for all information.
 
 ### Usage
 
