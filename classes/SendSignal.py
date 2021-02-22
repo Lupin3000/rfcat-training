@@ -273,7 +273,7 @@ class SendSignal(object):
             rf.RFxmit(data=self.__send_message, repeat=int(self.repeats))
             rf.setModeIDLE()
         except Exception as err:
-            sys.exit('Error: {0}'.format(str(err)))
+            sys.exit('Error: {0}'.format(err))
 
         # create datetime information
         now = datetime.now()
