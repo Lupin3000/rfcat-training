@@ -63,8 +63,8 @@ class ReceiveSignal:
         """
         dump signal to STDOUT
         """
-
         divider = '-' * 80
+
         print("SIGNAL RECEIVE INFORMATION")
         print(divider)
         print('Frequency in MHz : {0}'.format(ReceiveSignal.__SIGNAL_SETTINGS['frequency']))
