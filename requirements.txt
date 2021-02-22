@@ -1,5 +1,1 @@
-pyusb
-future
-ipython
-pyserial
-numpy
+rfcat
