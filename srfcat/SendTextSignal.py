@@ -76,6 +76,9 @@ class SendSignal:
 
     @staticmethod
     def send_signal():
+        """
+        Transmit signal with rfcat
+        """
         rfc_obj = RfCat()
         rfc_obj.setMdmModulation(MOD_ASK_OOK)
         rfc_obj.setFreq(SendSignal.__FREQUENCY)
