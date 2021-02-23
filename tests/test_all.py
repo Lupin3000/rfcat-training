@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
+from srfcat.SendTextSignal import SendSignal
+from srfcat.ReceiveTextSignal import ReceiveSignal
 import pytest
-from srfcat import SendSignal
-from srfcat import ReceiveSignal
 
 
 def test_send_frequency_true():
