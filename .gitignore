@@ -1,5 +1,7 @@
-# macOS/editor
+# macOS
 .DS_Store
+
+# editor directory
 .idea
 
 # Compiled python modules.
