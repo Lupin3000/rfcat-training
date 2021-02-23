@@ -92,9 +92,9 @@ class ReceiveSignal:
         ReceiveSignal.__SIGNAL_SETTINGS['max_power'] = bool(value)
 
     @staticmethod
-    def get_debug_signal():
+    def get_signal_dump():
         """
-        dump signal to STDOUT
+        dump signal information to STDOUT
         """
         divider = '-' * 80
 
@@ -110,7 +110,7 @@ class ReceiveSignal:
     @staticmethod
     def get_signal():
         """
-        Receive signal with rfcat
+        receive signal with rfcat
         """
         rfc_obj = RfCat()
         # @ToDo: create set method for modulation

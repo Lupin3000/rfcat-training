@@ -27,7 +27,7 @@ To send a signal (with caution), simply do::
     >>> SendSignal.set_repeats(5)
 
     # show send signal configuration
-    >>> SendSignal.get_debug_signal()
+    >>> SendSignal.get_signal_dump()
 
     # send signal
     >>> SendSignal.send_signal()
@@ -44,7 +44,7 @@ To receive a signal, simply do::
    >>> ReceiveSignal.set_max_power(True)
 
    # show receive signal configuration
-   >>> ReceiveSignal.get_debug_signal()
+   >>> ReceiveSignal.get_signal_dump()
 
    # receive signal
    >>> ReceiveSignal.get_signal()

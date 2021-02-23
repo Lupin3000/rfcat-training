@@ -99,9 +99,9 @@ class SendSignal:
         SendSignal.__SIGNAL_SETTINGS['text_message'] = value.strip()
 
     @staticmethod
-    def get_debug_signal():
+    def get_signal_dump():
         """
-        dump signal to STDOUT
+        dump signal information to STDOUT
         """
         divider = '-' * 80
 
@@ -117,7 +117,7 @@ class SendSignal:
     @staticmethod
     def send_signal():
         """
-        Transmit signal with rfcat
+        transmit signal with rfcat
         """
         rfc_obj = RfCat()
         # @ToDo: create set method for modulation
