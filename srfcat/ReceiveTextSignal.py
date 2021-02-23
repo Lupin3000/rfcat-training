@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from rflib import *
+import sys
 
 
 class ReceiveSignal:
