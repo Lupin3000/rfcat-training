@@ -11,6 +11,9 @@ $ apt update -y && apt upgrade -y
 # install some base packages
 $ apt install -y git tar curl python3-pip
 
+# install virtualenv
+$ sudo pip3 install virtualenv
+
 # add user to sudo group
 $ usermod -a -G sudo $USER
 ```
@@ -23,6 +26,9 @@ $ sudo xcode-select --install
 
 # install pip (Python2.7)
 $ sudo easy_install pip
+
+# install virtualenv
+$ sudo pip install virtualenv
 ```
 
 ## Install RfCat (Mininal)
@@ -47,17 +53,17 @@ $ ls -la && cat requirements.txt
 $ ls -la /usr/bin/ | grep -i "python"
 ```
 
-**Debian/macOS (Python3.x)**
+**Python 3 (_Debian/macOS_)**
 
 ```shell
 # install needed packages
 $ sudo pip3 install pyreadline ipython
 
 # start rfcat installation (repo folder)
-$ sudo python3.7 setup.py install
+$ sudo python3 setup.py install
 ```
 
-**macOS (Python 2.x)**
+**Python 2 (_macOS_)**
 
 ```shell
 # install needed packages 
@@ -84,7 +90,7 @@ $ ls -la /usr/local/bin/rfcat*
 $ /usr/local/bin/rfcat --help
 ```
 
-**Debian/macOS (Python3.x)**
+**Python 3 (_Debian/macOS_)**
 
 ```shell
 # show installed packages (optional)
@@ -94,7 +100,7 @@ $ pip3 freeze
 $ pip3 freeze | grep -i "rfcat\|ipython\|pyreadline"
 ```
 
-**macOS (Python2.x)**
+**Python 2 (_macOS_)**
 
 ```shell
 # show installed packages (optional)
@@ -106,14 +112,14 @@ $ pip freeze | grep -i "rfcat\|ipython\|pyreadline"
 
 ## Install RfCat: spectrum scan packages
 
-**Debian/macOS (Python3.x)**
+**Python 3 (_Debian/macOS_)**
 
 ```shell
 # start installation
 $ sudo pip3 install PySide2
 ```
 
-**macOS (Python 2.x)**
+**Python 2 (_macOS_)**
 
 ```shell
 # start installation
@@ -122,7 +128,7 @@ $ sudo pip install PySide2
 
 ## Verify packages for spectrum scan
 
-**Debian/macOS (Python3.x)**
+**Python 3 (_Debian/macOS_)**
 
 ```shell
 # show installed packages (optional) 
@@ -132,7 +138,7 @@ $ sudo pip3 freeze
 $ sudo pip3 freeze | grep -i "pyside2"
 ```
 
-**macOS (Python 2.x)**
+**Python 2 (_macOS_)**
 
 ```shell
 # show installed packages (optional) 
@@ -175,14 +181,14 @@ $ make
 $ sudo make install
 ```
 
-**Debian/macOS (Python3.x)**
+**Python 3 (_Debian/macOS_)**
 
 ```shell
 # install python usb packages
 $ sudo pip3 install libusb pyusb
 ```
 
-**macOS (Python 2.x)**
+**Python 2 (_macOS_)**
 
 ```shell
 # install python usb packages
@@ -196,7 +202,7 @@ $ sudo pip install libusb pyusb
 $ ls -la /usr/local/lib/libusb*
 ```
 
-**Debian/macOS (Python3.x)**
+**Python 3 (_Debian/macOS_)**
 
 ```shell
 # show installed packages (optional)
@@ -206,7 +212,7 @@ $ sudo pip3 freeze
 $ sudo pip3 freeze | grep -i "libusb\|pyusb"
 ```
 
-**macOS (Python 2.x)**
+**Python 2 (_macOS_)**
 
 ```shell
 # show installed packages (optional)
