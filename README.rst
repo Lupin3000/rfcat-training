@@ -48,3 +48,8 @@ To receive a signal, simply do::
 
    # receive signal
    >>> ReceiveSignal.get_signal()
+
+To uninstall::
+
+   # uninstall
+   $ pip uninstall srfc
