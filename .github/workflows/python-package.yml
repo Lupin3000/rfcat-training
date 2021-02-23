@@ -32,4 +32,4 @@ jobs:
     - name: Run pytest
       run: |
         # execute pytest
-        pytest tests/test.py
+        python -m pytest tests/test_all.py
