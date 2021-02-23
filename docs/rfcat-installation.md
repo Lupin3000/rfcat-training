@@ -11,7 +11,7 @@ $ apt update -y && apt upgrade -y
 # install some base packages
 $ apt install -y git tar curl python3-pip
 
-# install virtualenv
+# install virtualenv (optional)
 $ sudo pip3 install virtualenv
 
 # add user to sudo group
@@ -27,7 +27,7 @@ $ sudo xcode-select --install
 # install pip (Python2.7)
 $ sudo easy_install pip
 
-# install virtualenv
+# install virtualenv (optional)
 $ sudo pip install virtualenv
 ```
 
@@ -57,7 +57,7 @@ $ ls -la /usr/bin/ | grep -i "python"
 
 ```shell
 # install needed packages
-$ sudo pip3 install pyreadline ipython
+$ sudo pip3 install pyreadline ipython numpy
 
 # start rfcat installation (repo folder)
 $ sudo python3 setup.py install
@@ -67,7 +67,7 @@ $ sudo python3 setup.py install
 
 ```shell
 # install needed packages 
-$ sudo pip install pyreadline ipython
+$ sudo pip install pyreadline ipython numpy
 
 # start rfcat installation (repo folder)
 $ sudo python setup.py install

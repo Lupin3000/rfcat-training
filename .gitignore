@@ -1,5 +1,6 @@
-# macOS
+# macOS/editor
 .DS_Store
+.idea
 
 # Compiled python modules.
 *.pyc
@@ -10,7 +11,6 @@
 
 # Python egg metadata, regenerated from source files by setuptools.
 /*.egg-info
-
 
 # virtualenv
 .env
