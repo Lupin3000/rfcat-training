@@ -1,5 +1,19 @@
 srfcat
-------
+======
+
+Install
+_______
+
+To install simply do following::
+
+   # clone repository
+   $ git clone https://github.com/Lupin3000/rfcat-training.git
+
+   # run installer
+   $ python rfcat-training/setup.py install
+
+Usage
+_____
 
 To send a signal (with caution), simply do::
 
