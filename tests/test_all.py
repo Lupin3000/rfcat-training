@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from srfcat.SendTextSignal import SendSignal
-from srfcat.ReceiveTextSignal import ReceiveSignal
+from srfcat import SendSignal
+from srfcat import ReceiveSignal
 import pytest
 
 
