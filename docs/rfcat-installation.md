@@ -31,7 +31,7 @@ $ sudo easy_install pip
 $ sudo pip install virtualenv
 ```
 
-## Install RfCat (Mininal)
+## Install RfCat (Minimal)
 
 ```shell
 # clone repository
@@ -150,7 +150,7 @@ $ sudo pip freeze | grep -i "pyside2"
 
 ## Install RfCat: bootloader/firmware update packages
 
-### Install libraries for USB
+## Install libraries for USB
 
 **Debian**
 
@@ -195,7 +195,7 @@ $ sudo pip3 install libusb pyusb
 $ sudo pip install libusb pyusb
 ```
 
-### Verify USB installation
+## Verify USB installation
 
 ```shell
 # verify installation (optional)
@@ -222,7 +222,7 @@ $ sudo pip freeze
 $ sudo pip freeze | grep -i "libusb\|pyusb"
 ```
 
-### Install libraries for sdcc
+## Install libraries for sdcc
 
 **Debian**
 

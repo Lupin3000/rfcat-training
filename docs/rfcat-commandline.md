@@ -83,6 +83,4 @@ $ sudo rfcat -i 0 --specan --centfreq 434000000
 $ sudo rfcat -n 100  -f 434000000 -s
 ```
 
-... will continue soon ...
-
 [Go back](./readme.md)

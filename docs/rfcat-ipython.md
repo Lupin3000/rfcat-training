@@ -65,7 +65,7 @@ _Note:_ To prevent the unplug/plug-in (_after your actions like receive or trans
 In [n]: d.setModeIDLE()
 ```
 
-## Spectrum Analyzer
+## Spectrum analyzer
 
 ```python
 # start spectrum analyzer without frequency

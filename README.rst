@@ -20,34 +20,40 @@ To send a signal (with caution), simply do::
     # import
     >>> from srfcat import SendSignal
 
-    # set send signal values
-    >>> SendSignal.set_frequency(433000000)
-    >>> SendSignal.set_baud_rate(4000)
-    >>> SendSignal.set_message('Hello World')
-    >>> SendSignal.set_repeats(5)
+    # create object
+    >>> send_rf = SendSignal()
+
+    # set values
+    >>> send_rf.set_frequency(434000000)
+    >>> send_rf.set_baud_rate(4800)
+    >>> send_rf.set_message('Hello World from RfCat...')
+    >>> send_rf.set_repeats(10)
 
     # show send signal configuration
-    >>> SendSignal.get_signal_dump()
+    >>> send_rf.get_signal_dump()
 
-    # send signal
-    >>> SendSignal.send_signal()
+    # start send signal
+    >>> send_rf.send_signal()
 
 To receive a signal, simply do::
 
    # import
    >>> from srfcat import ReceiveSignal
 
-   # set receive signal values
-   >>> ReceiveSignal.set_frequency(433000000)
-   >>> ReceiveSignal.set_baud_rate(4000)
-   >>> ReceiveSignal.set_lowball(True)
-   >>> ReceiveSignal.set_max_power(True)
+   # create object
+   >>> receive_rf = ReceiveSignal()
+
+   # set values
+   >>> receive_rf.set_frequency(868000000)
+   >>> receive_rf.set_baud_rate(4800)
+   >>> receive_rf.set_lowball(True)
+   >>> receive_rf.set_max_power(True)
 
    # show receive signal configuration
-   >>> ReceiveSignal.get_signal_dump()
+   >>> receive_rf.get_signal_dump()
 
-   # receive signal
-   >>> ReceiveSignal.get_signal()
+   # start receive signal
+   >>> receive_rf.get_signal()
 
 To uninstall::
 
